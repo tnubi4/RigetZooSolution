@@ -48,8 +48,17 @@ header {
     color: black;
     font-family: 'Times New Roman';
     text-align: left;
-    font-style: initial
+    font-style: initial;
+    font-size:17.5px;
 }
+
+.info h3 {
+    color: #C04F15;
+    font-size: 17.5px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
 
 .register {
     background-color: #C04F15;
