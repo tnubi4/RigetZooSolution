@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background-color: #275317;
+    color: white;
+    padding: 9px 0;
+    text-align: center;
+    width: auto;
+    height: auto;
+    font-family: 'Times New Roman';
+    font-weight: bolder;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 0.25em;
+    background: #C04F15;
+    padding: 20px 50px 20px 50px;
+    font-style: italic;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.info h2 {
+    color: #C04F15;
+}
+
+.info p {
+    color: black;
+    font-family: 'Times New Roman';
+    text-align: left;
+    font-style: initial
+}
+
+.register {
+    background-color: #C04F15;
+    padding: 20px 50px 20px 50px;
+    border-radius: 50px;
+    font-family:'Times New Roman';
+    color:black;
+}
+
+    .register h3 {
+        font-weight: bold;
+    }
+
+.press button {
+    background-color: #275317;
+    color: white;
+    background-blend-mode: color;
+}
+
+h2 {
+    font-family: 'Times New Roman';
+    font-weight: 700;
+}
+
+h1 {
+    font-family:'Times New Roman';
+    font-weight:700;
+}
+
+.contactbody h3 {
+    font-family: 'Times New Roman';
+    font-weight: 700;
+    color: #C04F15;
+}
+
+.contactbody p {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    color: #275317;
+    text-align: center;
+    font-style: italic;
+}
+
+.access p {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 0.25em;
+    background: #C04F15;
+    padding: 20px 50px 20px 50px;
+    font-style: italic;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #275317;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        background-color: #C04F15;
+    }
+
+.contact{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.submission-message {
+    display: none;
+    color: green;
+    margin-top: 10px;
+}

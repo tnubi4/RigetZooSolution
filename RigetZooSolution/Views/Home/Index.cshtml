@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Riget Zoo Adventures";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Riget Zoo Adventures</h1>
+        </div>
+    </header>
+    <section class="hero">
+        <img src="~/css/homeimage.jpg" />
+        <p>
+            Dive in to an amazing zoo experience you won't find anywhere else <br />
+            Come and explore!!
+        </p>
+    </section>
+    <section class="info">
+        <h2>Information</h2>
+        <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+        <h2>FAQ's</h2>
+        <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+    </section>
+
+    <div class="contactbody">
+        <p>If you are unable to find an answer to your questions in this area, kindly fill in the 'Contact Us' form below to ask us a question</p>
+        <h3>Contact Us</h3>
+    </div>
+    
+
+    <div class="contact">
+        <form id="contactForm" action="" method="post">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="uk">United Kingdom</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="subject">Query</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+        <div id="submissionMessage" class="submission-message">
+            The form has been submitted.
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to show the message before the page reloads
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            // Show the submission message
+            var messageDiv = document.getElementById("submissionMessage");
+            messageDiv.style.display = "block";
+
+            // The page will reload after this (default form behavior)
+        });
+    </script>
+
+    <br />
+    <footer class="border-top footer text-muted">
+        <section class="container">
+            &copy; 2025 - RigetZooSolution - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </section>
+    </footer>
+</body>
+</html>
