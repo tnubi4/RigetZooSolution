@@ -8,9 +8,9 @@
 @{
     if (@Model.DisplayConfirmAccountLink)
     {
-<p>
-    Your account has been registered. Kindly Log In Now
-</p>
+        <p>
+            <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
+        </p>
     }
     else
     {

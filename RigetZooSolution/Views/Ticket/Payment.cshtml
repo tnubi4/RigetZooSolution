@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Payment";
+}
+
+<div class="payment">
+<h2>Payment</h2>
+
+<p>Visitor Name: @ViewBag.VisitorName</p>
+
+<h3>Selected Tickets</h3>
+<ul>
+    <li>Adult Tickets: @ViewBag.AdultTickets</li>
+    <li>Child Tickets: @ViewBag.ChildTickets</li>
+    <li>Under 5 Tickets: @ViewBag.Under5Tickets</li>
+    <li>Senior Tickets: @ViewBag.SeniorTickets</li>
+    <li>Student Tickets: @ViewBag.StudentTickets</li>
+    <li>Disabled Adult Tickets: @ViewBag.DisabledAdultTickets</li>
+    <li>Disabled Child Tickets: @ViewBag.DisabledChildTickets</li>
+</ul>
+
+<h3>Total Price: £@ViewBag.TotalPrice</h3>
+
+<form action="/Ticket/ProcessPayment" method="post">
+    <script src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="your_stripe_publishable_key"
+            data-amount="@((long)(ViewBag.TotalPrice * 100))"
+            data-name="Zoo Ticket Booking"
+            data-description="Book your tickets"
+            data-currency="gbp">
+    </script>
+</form>
+</div>

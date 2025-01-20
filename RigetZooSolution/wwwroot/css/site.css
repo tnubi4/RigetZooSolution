@@ -49,14 +49,15 @@ header {
     font-family: 'Times New Roman';
     text-align: left;
     font-style: initial;
-    font-size:17.5px;
+    font-size:18px;
 }
 
 .info h3 {
-    color: #C04F15;
-    font-size: 17.5px;
+    color: #275317;
+    font-size: 19px;
     font-family: 'Times New Roman';
     font-weight: bold;
+    padding-bottom: 0px;
 }
 
 
@@ -89,7 +90,7 @@ h1 {
 }
 
 .contactbody h3 {
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman';`
     font-weight: 700;
     color: #C04F15;
 }
@@ -107,9 +108,7 @@ h1 {
     color: black;
     text-align: center;
     border-radius: 0.25em;
-    background: #C04F15;
     padding: 20px 50px 20px 50px;
-    font-style: italic;
     font-family: 'Times New Roman';
     font-weight: bold;
 }
@@ -147,4 +146,57 @@ input[type=submit] {
     display: none;
     color: green;
     margin-top: 10px;
+}
+
+.btn {
+    color: white;
+    background-color: #275317;
+    font-weight: bold;
+    align-self:center;
+}
+
+
+
+.book label1 {
+    font-family: 'Times New Roman';
+    font-weight: 700;
+    color: #C04F15;
+    font-size: 20px;
+}
+
+    .book label {
+        font-family: 'Times New Roman';
+        font-weight: 700;
+        font-size:18px;
+    }
+
+.book h2 {
+    color: #C04F15;
+}
+
+.book button {
+    color: white;
+    background-color: #275317;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.payment h2 {
+    color: #C04F15;
+    font-size: 40px;
+}
+
+.payment h3 {
+    color: #C04F15;
+    font-size: 25px;
+    font-family: 'Times New Roman';
+    font-weight:bold;
+}
+
+.payment li {
+    font-size: 19px;
+}
+
+.payment p {
+    font-size: 19px;
 }

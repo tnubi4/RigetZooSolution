@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RigetZooSolution.Models;
 using System.Diagnostics;
@@ -27,7 +28,7 @@ namespace RigetZooSolution.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult Tickets()
         {
             return View();
@@ -37,7 +38,7 @@ namespace RigetZooSolution.Controllers
         {
             return View();
         }
-
+        
         public IActionResult Accessibility()
         {
             return View();
