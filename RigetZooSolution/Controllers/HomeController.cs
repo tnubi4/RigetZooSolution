@@ -28,7 +28,7 @@ namespace RigetZooSolution.Controllers
         {
             return View();
         }
-        [Authorize]
+        
         public IActionResult Tickets()
         {
             return View();

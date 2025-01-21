@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Membership Plans";
+}
+
+<h2>Choose a Membership Plan</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Plan Name</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model)
+        {
+            <tr>
+                <td>@plan.PlanName</td>
+                <td>£@plan.Price</td>
+                <td>@plan.DurationInMonths months</td>
+                <td>
+                    <a href="@Url.Action("Checkout", "Membership", new { id = plan.Id })" class="btn btn-primary">Buy Now</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

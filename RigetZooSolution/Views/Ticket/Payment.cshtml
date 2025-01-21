@@ -18,6 +18,11 @@
     <li>Disabled Child Tickets: @ViewBag.DisabledChildTickets</li>
 </ul>
 
+<h3>Date & Time</h3>
+    <ul>
+        <li>Date & Time: @ViewBag.BookingDate</li>
+    </ul>
+
 <h3>Total Price: £@ViewBag.TotalPrice</h3>
 
 <form action="/Ticket/ProcessPayment" method="post">
@@ -25,8 +30,8 @@
             class="stripe-button"
             data-key="your_stripe_publishable_key"
             data-amount="@((long)(ViewBag.TotalPrice * 100))"
-            data-name="Zoo Ticket Booking"
-            data-description="Book your tickets"
+            data-name="Riget Zoo Adventures"
+            data-description="🔒Secure Transaction"
             data-currency="gbp">
     </script>
 </form>

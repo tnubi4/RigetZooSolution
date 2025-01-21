@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Stripe;
 
 namespace RigetZooSolution.Controllers
 {
+    [Authorize]
     public class TicketController : Controller
     {
         // GET: Ticket Booking Form
@@ -14,7 +16,7 @@ namespace RigetZooSolution.Controllers
         // POST: Handle Ticket Booking and Calculate Total Price
         [HttpPost]
         public ActionResult BookTickets(string visitorName, int adultTickets, int childTickets, int under5Tickets,
-                                         int seniorTickets, int studentTickets, int disabledAdultTickets, int disabledChildTickets)
+                                         int seniorTickets, int studentTickets, int disabledAdultTickets, int disabledChildTickets, DateTime bookingDate)
         {
             // Prices for each ticket type
             const decimal adultPrice = 25m;
@@ -43,6 +45,7 @@ namespace RigetZooSolution.Controllers
             ViewBag.StudentTickets = studentTickets;
             ViewBag.DisabledAdultTickets = disabledAdultTickets;
             ViewBag.DisabledChildTickets = disabledChildTickets;
+            ViewBag.BookingDate = bookingDate;
             ViewBag.TotalPrice = totalPrice;
 
             return View("Payment");

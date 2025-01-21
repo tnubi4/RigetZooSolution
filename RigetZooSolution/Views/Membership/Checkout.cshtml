@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+<p>You have selected the <strong>@Model.PlanName</strong> plan.</p>
+<p>Price: <strong>£@Model.Price</strong></p>
+<p>Duration: <strong>@Model.DurationInMonths months</strong></p>
+
+<form action="/Membership/ProcessPayment" method="post">
+    <input type="hidden" name="PlanId" value="@Model.Id" />
+    <button type="submit" class="btn btn-success">Proceed to Payment</button>
+</form>

@@ -2,36 +2,71 @@
     ViewData["Title"] = "Book Tickets";
 }
 
-
 <div class="book">
-<h2>Book Tickets</h2>
+    <h2>Book Tickets</h2>
 
-<form action="/Ticket/BookTickets" method="post">
-    <label for="visitorName">Visitor Name:</label>
-    <input type="text" id="visitorName" name="visitorName" required /><br />
+    <form action="/Ticket/BookTickets" method="post" onsubmit="return validateBookingDateTime()">
+        <label for="visitorName">Visitor Name:</label>
+        <input type="text" id="visitorName" name="visitorName" required /><br />
 
-    <label1>Number of Tickets:</label1><br />
-    <label for="adultTickets">Adult (Age 16-60) - £25:</label><br />
-    <input type="number" id="adultTickets" name="adultTickets" value="0" min="0" /><br />
+        <label1>Number of Tickets:</label1><br />
+        <label for="adultTickets">Adult (Age 16-60) - £25:</label><br />
+        <input type="number" id="adultTickets" name="adultTickets" value="0" min="0" /><br />
 
-    <br /><label for="childTickets">Child (Age 5-15) - £17:</label><br />
-    <input type="number" id="childTickets" name="childTickets" value="0" min="0" /><br />
+        <br /><label for="childTickets">Child (Age 5-15) - £17:</label><br />
+        <input type="number" id="childTickets" name="childTickets" value="0" min="0" /><br />
 
-    <br /><label for="under5Tickets">Under 5 (Age 0-5) - £0:</label><br />
-    <input type="number" id="under5Tickets" name="under5Tickets" value="0" min="0" /><br />
+        <br /><label for="under5Tickets">Under 5 (Age 0-5) - £0:</label><br />
+        <input type="number" id="under5Tickets" name="under5Tickets" value="0" min="0" /><br />
 
-    <br /><label for="seniorTickets">Senior (Age 60+) - £20:</label><br />
-    <input type="number" id="seniorTickets" name="seniorTickets" value="0" min="0" /><br />
+        <br /><label for="seniorTickets">Senior (Age 60+) - £20:</label><br />
+        <input type="number" id="seniorTickets" name="seniorTickets" value="0" min="0" /><br />
 
-    <br /><label for="studentTickets">Student (with ID) - £22.50:</label><br />
-    <input type="number" id="studentTickets" name="studentTickets" value="0" min="0" /><br />
+        <br /><label for="studentTickets">Student (with ID) - £22.50:</label><br />
+        <input type="number" id="studentTickets" name="studentTickets" value="0" min="0" /><br />
 
-    <br /><label for="disabledAdultTickets">Disabled Adult - £22.50:</label><br />
-    <input type="number" id="disabledAdultTickets" name="disabledAdultTickets" value="0" min="0" /><br />
+        <br /><label for="disabledAdultTickets">Disabled Adult - £22.50:</label><br />
+        <input type="number" id="disabledAdultTickets" name="disabledAdultTickets" value="0" min="0" /><br />
 
-    <br /><label for="disabledChildTickets">Disabled Child - £15:</label><br />
-    <input type="number" id="disabledChildTickets" name="disabledChildTickets" value="0" min="0" /><br />
+        <br /><label for="disabledChildTickets">Disabled Child - £15:</label><br />
+        <input type="number" id="disabledChildTickets" name="disabledChildTickets" value="0" min="0" /><br />
 
-    <br /><button type="submit">Calculate Total & Proceed to Payment</button>
-</form>
+        <br /><label for="bookingDate">Date & Time</label><br />
+        <input type="datetime-local" id="bookingDate" name="bookingDate" /><br />
+
+        <br /><button type="submit">Calculate Total & Proceed to Payment</button>
+    </form>
 </div>
+
+<script>
+    // Set the minimum value for the datetime-local field to the current date and time
+    document.addEventListener("DOMContentLoaded", function() {
+        const now = new Date();
+        const minDateTime = now.toISOString().slice(0, 16); // Format to YYYY-MM-DDTHH:mm
+        const bookingDate = document.getElementById("bookingDate");
+        bookingDate.setAttribute("min", minDateTime);
+    });
+
+    function validateBookingDateTime() {
+        const bookingDate = document.getElementById("bookingDate").value;
+        if (!bookingDate) {
+            alert("Please select a valid booking date and time.");
+            return false;
+        }
+
+        const selectedDate = new Date(bookingDate);
+        const startTime = new Date(selectedDate);
+        const endTime = new Date(selectedDate);
+
+        // Set allowed times for 6:00 AM and 9:00 PM
+        startTime.setHours(9, 0, 0, 0);
+        endTime.setHours(18, 0, 0, 0);
+
+        // Check if the selected date and time fall within the allowed range
+        if (selectedDate < new Date() || selectedDate < startTime || selectedDate > endTime) {
+            alert("Please select a time between 6:00 AM and 9:00 PM on a future date.");
+            return false;
+        }
+        return true;
+    }
+</script>
