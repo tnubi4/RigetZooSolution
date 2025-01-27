@@ -23,11 +23,6 @@ namespace RigetZooSolution.Controllers
         {
             return View();
         }
-
-        public IActionResult Education()
-        {
-            return View();
-        }
         
         public IActionResult Tickets()
         {
@@ -45,6 +40,11 @@ namespace RigetZooSolution.Controllers
         }
 
         public IActionResult Membership()
+        {
+            return View();
+        }
+
+        public IActionResult Education()
         {
             return View();
         }

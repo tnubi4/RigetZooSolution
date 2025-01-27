@@ -7,20 +7,11 @@ html, body {
     background-color:beige;
 }
 
-.image-container {
-    position: relative;
-    display: inline-block;
-    border-radius: 8px;
-}
 
-.image-container img {
-    border-radius: 8px;
-}
 
 .hover-text {
     visibility: hidden;
     width: 400px;
-    background-color: black;
     color: white;
     text-align: center;
     border-radius: 6px;
@@ -32,6 +23,7 @@ html, body {
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .image-container:hover .hover-text {
@@ -39,9 +31,8 @@ html, body {
     opacity: 100;
 }
 
-.image-container:hover {
+.image-container:hover .img {
     visibility: visible;
-    filter: blur(1px);
 }
 
 .body-container {
@@ -57,38 +48,77 @@ header {
     color: white;
     margin: 0.5%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    text-align: center;
-    width: auto;
-    height: auto;
     font-family: 'Times New Roman';
     font-weight: bolder;
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the header stays above other content */
+    border-radius: 8px;
 }
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+    header nav ul li {
+        display: inline;
+    }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            header nav ul li a:hover {
+                background-color: #C04F15;
+            }
 
 .hero-index {
     position: relative;
     width: 100%;
-    height: 500px; /* Reduced height for the hero section */
-    background: url('/css/homeimage.jpg') no-repeat center center; /* Correctly setting the image as background */
+    height: 600px; /* Reduced height for the hero section */
+    background: url('/css/homelion.jpg') no-repeat center center; /* Correctly setting the image as background */
     background-size: cover; /* Ensure the image covers the entire hero section */
 }
 
     .hero-index h1 {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 25%;
         transform: translate(-50%, -50%); /* Center the text in the middle of the section */
         color: white;
-        font-size: 55px;
+        font-size: 68px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
         text-align: center;
     }
 
+    .hero-index a {
+        position: absolute;
+        top: 60%;
+        left: 20%;
+        transform: translate(-50%, -50%); /* Center the text in the middle of the section */
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        text-align: center;
+    }
+
+    
+
 .hero-tickets {
     position: relative;
     width: 100%;
     height: 500px; /* Reduced height for the hero section */
-    background: url('/css/ticketimage.png') no-repeat center center; /* Correctly setting the image as background */
+    background: url('/css/ticketing.jpg') no-repeat center center; /* Correctly setting the image as background */
     background-size: cover; /* Ensure the image covers the entire hero section */
 }
 
@@ -104,31 +134,179 @@ header {
         text-align: center;
     }
 
-.under {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #C04F15;
+.hero-membership {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Reduced height for the hero section */
+    background: url('/css/membership.jpg') no-repeat center center; /* Correctly setting the image as background */
+    background-size: cover; /* Ensure the image covers the entire hero section */
 }
 
-.info h2 {
-    color: #C04F15;
+    .hero-membership h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text in the middle of the section */
+        color: white;
+        font-size: 55px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        text-align: center;
+    }
+
+.hero-access {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Reduced height for the hero section */
+    background: url('/css/accessibility.jpg') no-repeat center center; /* Correctly setting the image as background */
+    background-size: cover; /* Ensure the image covers the entire hero section */
 }
+
+    .hero-access h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text in the middle of the section */
+        color: white;
+        font-size: 55px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        text-align: center;
+    }
+.hero-education {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Reduced height for the hero section */
+    background: url('/css/education.jpg') no-repeat center center; /* Correctly setting the image as background */
+    background-size: cover; /* Ensure the image covers the entire hero section */
+}
+
+    .hero-education h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text in the middle of the section */
+        color: white;
+        font-size: 55px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        text-align: center;
+    }
+
+.hero-hotels {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Reduced height for the hero section */
+    background: url('/css/hotelimage.jpg') no-repeat center center; /* Correctly setting the image as background */
+    background-size: cover; /* Ensure the image covers the entire hero section */
+}
+
+    .hero-hotels h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text in the middle of the section */
+        color: white;
+        font-size: 55px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        text-align: center;
+    }
+
+.image-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+    .image-container1 img {
+        max-width: 100%; /* Ensures the image does not overflow the container */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+.under h4 {
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    font-weight: 500;
+}
+
+.under p {
+    text-align: center;
+    font-size: 23px;
+    color: black;
+    font-weight: 500;
+}
+
+.under img {
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    display: block;
+    text-align: center;
+    position:center;
+}
+
+
+.under a {
+    text-align: center;
+    left: 10%;
+    transform: translate(300%, -50%);
+    position:absolute;
+}
+
+.info {
+    background-color: #FFC000;
+    border-radius: 50px;
+}
+
+    .info h2 {
+        color: #C04F15;
+        text-align: center;
+        font-size: 35px;
+    }
 
 .info p {
     color: black;
     font-family: 'Times New Roman';
     text-align: left;
     font-style: initial;
-    font-size:18px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .info h3 {
     color: #275317;
-    font-size: 19px;
+    font-size: 22px;
     font-family: 'Times New Roman';
     font-weight: bold;
     padding-bottom: 0px;
+    text-align: center;
+}
+
+.info1 h2 {
+    color: #C04F15;
+    text-align: center;
+    font-size: 35px;
+}
+
+.info1 p {
+    color: black;
+    font-family: 'Times New Roman';
+    text-align: left;
+    font-style: initial;
+    font-size: 20px;
+    text-align: center;
+}
+
+.info1 h3 {
+    color: #275317;
+    font-size: 22px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    padding-bottom: 0px;
+    text-align: center;
 }
 
 
@@ -175,7 +353,7 @@ h1 {
 }
 
 .access p {
-    font-size: 20px;
+    font-size: 27px;
     color: black;
     text-align: center;
     border-radius: 0.25em;
@@ -210,6 +388,7 @@ input[type=submit] {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    align-content: center;
 }
 
 .submission-message {
@@ -220,9 +399,9 @@ input[type=submit] {
 
 .btn {
     color: white;
-    background-color: #275317;
+    background-color: #C04F15;
     font-weight: bold;
-    align-self:center;
+    align-self: center;
 }
 
 
@@ -273,8 +452,10 @@ input[type=submit] {
 
 .function {
     display: flex; /* Enables flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
     align-items: center; /* Centers items vertically */
-    gap: 50px; /* Adds space between the text and the image */
+    justify-content: center; /* Centers items horizontally within the function */
+    gap: 50px; /* Adds space between image-container items */
 }
 
 .function-item {
@@ -302,9 +483,49 @@ input[type=submit] {
 }
 
 .abilities {
-    background-color: #C04F15;
+    background-color: chocolate;
     border-radius: 8px;
-    padding: 50px 50px 50px;
-    margin-right: 93px;
-    align-items: center;
+    padding: 50px;
+    margin: auto; /* Centers the section horizontally */
+    display: flex; /* Enables flexbox for the section */
+    flex-direction: column; /* Stacks the children vertically */
+    align-items: center; /* Centers the children horizontally */
+    justify-content: center; /* Centers the children vertically */
+    gap: 30px;
+}
+
+.image-container {
+    position: relative;
+    display: flex; /* Ensures the hover-text aligns with the image */
+    flex-direction: column; /* Allows hover-text to appear below the image */
+    align-items: center; /* Centers the image and hover-text */
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+    .image-container img {
+        border-radius: 8px;
+        width: 500px;
+        height: 400px;
+    }
+
+.game {
+    display: flex; /* Enables flexbox for side-by-side layout */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Adds space between the text and the image */
+}
+
+.game-items {
+    flex: 1; /* Allows the text to take up available space */
+}
+
+.game-item img {
+    max-width: 100%; /* Ensures the image doesn’t exceed its container */
+    border-radius: 8px; /* Optional: Rounds the image corners */
+    width: 500px; /* Set a fixed width if desired */
+    height: 400px; /* Set a fixed height if desired */
+}
+
+.btn {
+    text-align:center;
 }
